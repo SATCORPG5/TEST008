@@ -1,1 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #0B0C10;
+  color: #C5C6C7;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.1em;
+  cursor: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glass-panel {
+  background: rgba(31, 40, 51, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.1);
+}
+
+.pulse-core {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #66FCF1;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #66FCF1;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
